@@ -1,3 +1,0 @@
-LibraryAddFunction.SumsTwoInts 4 0.00153344
-LibraryModulusOperator.ModuloTwoNums 2 0.00257095
----

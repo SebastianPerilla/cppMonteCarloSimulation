@@ -1,5 +1,0 @@
-if(EXISTS "/home/sebas/Desktop/dev/personal/cpp/cppMonteCarloSimulation/build/tests/test_library[1]_tests.cmake")
-  include("/home/sebas/Desktop/dev/personal/cpp/cppMonteCarloSimulation/build/tests/test_library[1]_tests.cmake")
-else()
-  add_test(test_library_NOT_BUILT test_library_NOT_BUILT)
-endif()
