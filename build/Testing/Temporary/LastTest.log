@@ -1,0 +1,57 @@
+Start testing: Oct 01 22:48 CEST
+----------------------------------------------------------
+1/2 Testing: LibraryAddFunction.SumsTwoInts
+1/2 Test: LibraryAddFunction.SumsTwoInts
+Command: "/home/sebas/Desktop/dev/personal/cpp/cppMonteCarloSimulation/build/tests/test_library" "--gtest_filter=LibraryAddFunction.SumsTwoInts" "--gtest_also_run_disabled_tests"
+Directory: /home/sebas/Desktop/dev/personal/cpp/cppMonteCarloSimulation/build/tests
+"LibraryAddFunction.SumsTwoInts" start time: Oct 01 22:48 CEST
+Output:
+----------------------------------------------------------
+Running main() from /home/sebas/Desktop/dev/personal/cpp/cppMonteCarloSimulation/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = LibraryAddFunction.SumsTwoInts
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from LibraryAddFunction
+[ RUN      ] LibraryAddFunction.SumsTwoInts
+[       OK ] LibraryAddFunction.SumsTwoInts (0 ms)
+[----------] 1 test from LibraryAddFunction (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"LibraryAddFunction.SumsTwoInts" end time: Oct 01 22:48 CEST
+"LibraryAddFunction.SumsTwoInts" time elapsed: 00:00:00
+----------------------------------------------------------
+
+2/2 Testing: LibraryModulusOperator.ModuloTwoNums
+2/2 Test: LibraryModulusOperator.ModuloTwoNums
+Command: "/home/sebas/Desktop/dev/personal/cpp/cppMonteCarloSimulation/build/tests/test_library" "--gtest_filter=LibraryModulusOperator.ModuloTwoNums" "--gtest_also_run_disabled_tests"
+Directory: /home/sebas/Desktop/dev/personal/cpp/cppMonteCarloSimulation/build/tests
+"LibraryModulusOperator.ModuloTwoNums" start time: Oct 01 22:48 CEST
+Output:
+----------------------------------------------------------
+Running main() from /home/sebas/Desktop/dev/personal/cpp/cppMonteCarloSimulation/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = LibraryModulusOperator.ModuloTwoNums
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from LibraryModulusOperator
+[ RUN      ] LibraryModulusOperator.ModuloTwoNums
+[       OK ] LibraryModulusOperator.ModuloTwoNums (0 ms)
+[----------] 1 test from LibraryModulusOperator (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"LibraryModulusOperator.ModuloTwoNums" end time: Oct 01 22:48 CEST
+"LibraryModulusOperator.ModuloTwoNums" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Oct 01 22:48 CEST

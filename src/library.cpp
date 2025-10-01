@@ -3,15 +3,13 @@
 
 namespace library{
     int add(int a, int b) {
-        int result = a + b;
-        std::cout << result << std::endl;
-        return result;
+        // int result = a + b;
+        // std::cout << result << std::endl;
+        return a + b;
     }
 
-    int main(){
-        add(1,2);
+    int modulo(int a, int b){
+        return a % b;
+    }
 
-        return 0;
-    };
 }
-

@@ -1,0 +1,5 @@
+add_test([=[LibraryAddFunction.SumsTwoInts]=]  /home/sebas/Desktop/dev/personal/cpp/cppMonteCarloSimulation/build/tests/test_library [==[--gtest_filter=LibraryAddFunction.SumsTwoInts]==] --gtest_also_run_disabled_tests)
+set_tests_properties([=[LibraryAddFunction.SumsTwoInts]=]  PROPERTIES WORKING_DIRECTORY /home/sebas/Desktop/dev/personal/cpp/cppMonteCarloSimulation/build/tests SKIP_REGULAR_EXPRESSION [==[\[  SKIPPED \]]==])
+add_test([=[LibraryModulusOperator.ModuloTwoNums]=]  /home/sebas/Desktop/dev/personal/cpp/cppMonteCarloSimulation/build/tests/test_library [==[--gtest_filter=LibraryModulusOperator.ModuloTwoNums]==] --gtest_also_run_disabled_tests)
+set_tests_properties([=[LibraryModulusOperator.ModuloTwoNums]=]  PROPERTIES WORKING_DIRECTORY /home/sebas/Desktop/dev/personal/cpp/cppMonteCarloSimulation/build/tests SKIP_REGULAR_EXPRESSION [==[\[  SKIPPED \]]==])
+set(  test_library_TESTS LibraryAddFunction.SumsTwoInts LibraryModulusOperator.ModuloTwoNums)

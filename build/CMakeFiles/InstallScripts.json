@@ -1,0 +1,12 @@
+{
+	"InstallScripts" : 
+	[
+		"/home/sebas/Desktop/dev/personal/cpp/cppMonteCarloSimulation/build/cmake_install.cmake",
+		"/home/sebas/Desktop/dev/personal/cpp/cppMonteCarloSimulation/build/src/cmake_install.cmake",
+		"/home/sebas/Desktop/dev/personal/cpp/cppMonteCarloSimulation/build/tests/cmake_install.cmake",
+		"/home/sebas/Desktop/dev/personal/cpp/cppMonteCarloSimulation/build/_deps/googletest-build/cmake_install.cmake",
+		"/home/sebas/Desktop/dev/personal/cpp/cppMonteCarloSimulation/build/_deps/googletest-build/googlemock/cmake_install.cmake",
+		"/home/sebas/Desktop/dev/personal/cpp/cppMonteCarloSimulation/build/_deps/googletest-build/googletest/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

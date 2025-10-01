@@ -9,5 +9,6 @@ namespace library{
     * @return int Sum of a and b
     */
 int add(int a, int b);
+int modulo(int a, int b);
     
 }
