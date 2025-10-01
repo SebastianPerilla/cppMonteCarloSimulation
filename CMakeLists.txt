@@ -14,3 +14,10 @@ add_subdirectory(src)
 add_subdirectory(tests)
 
 
+add_custom_target(run_main_if_tests_pass
+  COMMAND ${CMAKE_CTEST_COMMAND} --output-on-failure
+  COMMAND $<TARGET_FILE:main>
+  DEPENDS main test_library
+  USES_TERMINAL
+)
+
