@@ -23,18 +23,13 @@ int main(){
         175.67, 177.77
     };
 
-    std::cout << previous30days.size() << "\n";
+    float average = mc::average(previous30days);
+    float variance = mc::variance(previous30days,average);    
 
-    float total = 0;
+    std::cout << "Average Daily Returns: " << average << '\n';
+    std::cout << "Variance: " << variance << "\n";
 
-    for (int i = 0; i < previous30days.size(); i++){
-        total += previous30days[i];
-    }
-
-    float averageDailyReturn = total / previous30days.size();
-    float variance;    
-
-    // float drift = mc::drift(averageDailyReturn, variance);
+    // float drift = mc::drift(averageDailyReturns, variance);
 
 
     return 0;
