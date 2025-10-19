@@ -1,18 +1,24 @@
 #include <iostream>
-#include "library.h"
+#include "periodicDailyReturn.h"
+#include "drift.h"
+#
 
 
 int main(){
-    int a = 10;
-    int b = 5;
 
-    std::cout << "\n";
+    // Calculate the Periodic Daily Returns
+    float currentDayPrice = 181;
+    float previousDayPrice = 182;
 
-    std::cout << "Variables: a = " << a << " , b = " << b << std::endl;
-    std::cout << "Sum Operator: a + b = " << library::add(a,b) << std::endl;
+    // PDR Implementation
+    float periodicDailyReturn = mc::periodicDailyReturn(currentDayPrice, previousDayPrice);
+    std::cout << "Periodic Daily Returns: " << periodicDailyReturn << '\n';
 
-    std::cout << "Modulo Operator: a %% b = " << library::modulo(a,b) << std::endl;
-    
+    float averageDailyReturn;
+    float variance;    
+
+    float drift = mc::drift(averageDailyReturn, variance);
+
+
     return 0;
 }
-
