@@ -24,7 +24,7 @@ int main(){
     };
 
     float average = mc::average(previous30days);
-    float variance = mc::variance(previous30days,average);    
+    float variance = mc::variance(previous30days, average);    
 
     std::cout << "Average Daily Returns: " << average << '\n';
     std::cout << "Variance: " << variance << "\n";
