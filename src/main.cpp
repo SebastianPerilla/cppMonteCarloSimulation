@@ -1,7 +1,7 @@
 #include <iostream>
 #include "periodicDailyReturn.h"
 #include "drift.h"
-#
+#include <vector>
 
 
 int main(){
@@ -14,10 +14,27 @@ int main(){
     float periodicDailyReturn = mc::periodicDailyReturn(currentDayPrice, previousDayPrice);
     std::cout << "Periodic Daily Returns: " << periodicDailyReturn << '\n';
 
-    float averageDailyReturn;
+
+    std::vector<float> previous30days = {
+        180.18, 182.23, 184.80, 184.77, 187.97, 193.51,
+        192.23, 186.57, 186.23, 185.50, 189.19, 189.60,
+        185.24, 182.08, 180.43, 178.17, 174.48, 179.77,
+        181.97, 175.30, 175.77, 173.98, 172.64, 177.00,
+        175.67, 177.77
+    };
+
+    std::cout << previous30days.size() << "\n";
+
+    float total = 0;
+
+    for (int i = 0; i < previous30days.size(); i++){
+        total += previous30days[i];
+    }
+
+    float averageDailyReturn = total / previous30days.size();
     float variance;    
 
-    float drift = mc::drift(averageDailyReturn, variance);
+    // float drift = mc::drift(averageDailyReturn, variance);
 
 
     return 0;
