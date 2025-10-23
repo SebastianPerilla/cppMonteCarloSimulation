@@ -1,7 +1,6 @@
 #include "drift.h"
 #include <cmath>
 #include <vector>
-#include <iostream>
 
 namespace mc {
     float average(std::vector<float> previous30Days){
@@ -17,13 +16,11 @@ namespace mc {
         
         float varianceTotal = 0.0;
 
-        for (int i = 0; i < 26; i++){
+        for (int i = 0; i < observations.size(); i++){
             varianceTotal += pow(observations[i] - sampleMean, 2);
         }
 
-        std::cout << varianceTotal << '\n';
-
-        return (varianceTotal / (26 - 1)); // Can result in division by 0
+        return (varianceTotal / (observations.size() - 1)); // Can result in division by 0
     }
 
 
