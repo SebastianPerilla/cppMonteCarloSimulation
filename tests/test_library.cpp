@@ -7,8 +7,6 @@ TEST(PeriodicDailyReturns, FirstTestPDR) {
 };
 
 
-std::vector<float> testList = {10.0, 20.0};
-
 TEST(Average, TestAverages) {
   std::vector<float> testList = {10.0, 20.0};
   EXPECT_EQ(mc::average(testList), 15.0);

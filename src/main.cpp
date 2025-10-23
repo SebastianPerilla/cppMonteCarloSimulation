@@ -1,7 +1,11 @@
 #include <iostream>
 #include "periodicDailyReturn.h"
 #include "drift.h"
+#include "randomValue.h"
+#include "nextDayPrice.h"
+
 #include <vector>
+#include <cmath>
 
 
 int main(){
@@ -11,7 +15,7 @@ int main(){
     float previousDayPrice = 182;
 
     // PDR Implementation
-    float periodicDailyReturn = mc::periodicDailyReturn(currentDayPrice, previousDayPrice);
+    float periodicDailyReturn = mc::periodicDailyReturn(currentDayPrice, previousDayPrice) * 1000;
     std::cout << "Periodic Daily Returns: " << periodicDailyReturn << '\n';
 
 
@@ -23,18 +27,35 @@ int main(){
         175.67, 177.77
     };
 
+    std::cout << previous26days.size() << '\n';
+
+    // Start of the Formulas for Monte Carlo Simulation
     float sampleMean = mc::average(previous26days);
     float variance = mc::variance(previous26days, sampleMean);    
-
     std::cout << "Sample Mean / Average Daily Returns: " << sampleMean << '\n';
     std::cout << "Variance: " << variance << "\n";
 
     float averageDailyReturns = mc::average(previous26days);
 
+    // Drift Formula = Average Daily Return - ( Variance / 2 )
     float drift = mc::drift(averageDailyReturns, variance);
-
     std::cout << "Drift: " << drift << '\n';
 
+
+    // Random Component
+    float standardDeviation = sqrt(variance);
+    std::cout << "Standard Deviation: " << standardDeviation << '\n';
+
+    float normalRandomValue = rando::normalRandomValue();
+    
+    float randomValue = standardDeviation * normalRandomValue;
+    std::cout << "STDV x NormalRandomvalue = RandomValue: " 
+              << standardDeviation << " * " 
+              << normalRandomValue << " = " 
+              << randomValue <<  '\n';
+
+    float nextDayPrice = mc::nextDayPrice(previous26days[0], drift, randomValue);
+    std::cout << "Next Day Price: " << nextDayPrice << '\n';
 
     return 0;
 }
