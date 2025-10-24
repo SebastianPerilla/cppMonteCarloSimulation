@@ -6,6 +6,7 @@
 
 #include <vector>
 #include <cmath>
+#include <tuple>
 
 
 int main(){
@@ -15,7 +16,7 @@ int main(){
     float previousDayPrice = 182;
 
     // PDR Implementation
-    float periodicDailyReturn = mc::periodicDailyReturn(currentDayPrice, previousDayPrice) * 1000;
+    float periodicDailyReturn = mc::periodicDailyReturn(currentDayPrice, previousDayPrice);
     std::cout << "Periodic Daily Returns: " << periodicDailyReturn << '\n';
 
 
@@ -30,15 +31,19 @@ int main(){
     std::cout << previous26days.size() << '\n';
 
     // Start of the Formulas for Monte Carlo Simulation
-    float sampleMean = mc::average(previous26days);
-    float variance = mc::variance(previous26days, sampleMean);    
+    auto sampleMeanLogReturnsTuple = mc::sampleMeanLogReturnTuple(previous26days);
+    std::vector<float> logReturns = std::get<0>(sampleMeanLogReturnsTuple);
+    float sampleMean = std::get<1>(sampleMeanLogReturnsTuple);
+    
+       
+    float variance = mc::variance(logReturns, sampleMean);    
     std::cout << "Sample Mean / Average Daily Returns: " << sampleMean << '\n';
     std::cout << "Variance: " << variance << "\n";
 
-    float averageDailyReturns = mc::average(previous26days);
+    // float averageDailyReturns = mc::sampleMeanDailyReturn(previous26days);
 
     // Drift Formula = Average Daily Return - ( Variance / 2 )
-    float drift = mc::drift(averageDailyReturns, variance);
+    float drift = mc::drift(sampleMean, variance);
     std::cout << "Drift: " << drift << '\n';
 
 

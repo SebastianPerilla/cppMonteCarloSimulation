@@ -1,26 +1,35 @@
 #include "drift.h"
 #include <cmath>
 #include <vector>
+#include <iostream>
+#include <tuple>
 
 namespace mc {
-    float average(std::vector<float> previous30Days){
-        float total = 0;
-        for (int i=0; i < previous30Days.size(); i++) {
-            total += previous30Days[i];
-        }
+
+    std::tuple<std::vector<float>, float> sampleMeanLogReturnTuple (std::vector<float> previous30Days) {
         
-        return (total / previous30Days.size());
+        std::vector<float> logReturns;
+
+        float total = 0;
+        
+        for (int i=1; i < previous30Days.size(); i++) {
+            total += log(previous30Days[i] / previous30Days[i-1]);   
+            
+            logReturns.push_back(total);        
+        };
+
+        return {logReturns, (total / logReturns.size())};
     }
 
-    float variance (std::vector<float> observations, float sampleMean) {
+    float variance (std::vector<float> logReturns, float sampleMean) {
         
         float varianceTotal = 0.0;
 
-        for (int i = 0; i < observations.size(); i++){
-            varianceTotal += pow(observations[i] - sampleMean, 2);
+        for (int i = 1; i < logReturns.size(); i++){
+            varianceTotal += pow(logReturns[i] - logReturns[i-1], 2);
         }
 
-        return (varianceTotal / (observations.size() - 1)); // Can result in division by 0
+        return (varianceTotal / (logReturns.size() - 1)); // Can result in division by 0
     }
 
 
