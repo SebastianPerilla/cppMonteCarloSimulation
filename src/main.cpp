@@ -62,5 +62,7 @@ int main(){
     float nextDayPrice = mc::nextDayPrice(previous26days[0], drift, randomValue);
     std::cout << "Next Day Price: " << nextDayPrice << '\n';
 
+    
+
     return 0;
 }
