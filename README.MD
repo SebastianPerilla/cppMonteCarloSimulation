@@ -1,5 +1,5 @@
 # cppMonteCarloSimulation
-Running basic monte carlo simulation as practice for C++
+Running basic monte carlo simulation for C++ 
 
 
 
@@ -19,3 +19,4 @@ ctest
 ### 
 Steps of Process, will now work on getting the data from yfinance<br>
 or other API for C++ 
+
