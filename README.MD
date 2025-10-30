@@ -1,7 +1,7 @@
 # cppMonteCarloSimulation
 Running basic monte carlo simulation for C++ 
 
-
+Now going to implement this at a massive scale
 
 ### To build project:
 ```
