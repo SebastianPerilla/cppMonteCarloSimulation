@@ -1,5 +1,5 @@
 #pragma once
 
 namespace rando {
-    float normalRandomValue();
+    float normalRandomValue(float mean , float stdv);
 }

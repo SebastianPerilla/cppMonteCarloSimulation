@@ -1,11 +1,12 @@
 #include "randomValue.h"
 #include <random>
+#include "drift.h"
 
 namespace rando {
 
-    float normalRandomValue() {
+    float normalRandomValue(float mean, float stdv) {
         std::default_random_engine generator;
-        std::normal_distribution<double> distribution(0.0, 1.0); // mean 0, stddev 1
+        std::normal_distribution<double> distribution(mean, stdv); // mean 0, stddev 1
 
         float randomNumber = distribution(generator);
         
